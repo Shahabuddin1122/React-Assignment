@@ -112,7 +112,7 @@
 
 .buttonRight {
     padding: 10px;
-    background-color: grey;
+    background-color: var(--color-secondary);
     width: 20%;
     border-radius: 8px;
     display: flex;
