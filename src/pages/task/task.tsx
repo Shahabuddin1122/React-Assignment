@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import styles from './note.module.css';
+import styles from './task.module.css';
 import tasksData from '../../models/task-items/tasks.json';
 import type { Task } from "../../types/task-item/task.ts";
 
-const Note = () => {
+const Task = () => {
     const [tasks, setTasks] = useState<Task[]>(tasksData);
     const [filter, setFilter] = useState<'All' | 'Completed' | 'Pending'>('All');
     const [activeTab, setActiveTab] = useState<'Recent' | 'Highlighted'>('Recent');
@@ -53,8 +53,8 @@ const Note = () => {
     return (
         <div className={styles.content}>
             <header className={styles.header}>
-                <p>Ready to start taking notes?</p>
-                <h1>Shahabuddin’s Notes</h1>
+                <p>Ready to start arrange tasks?</p>
+                <h1>Shahabuddin’s Tasks</h1>
             </header>
 
             <div className={styles.noteSection}>
@@ -128,4 +128,4 @@ const Note = () => {
     );
 };
 
-export default Note;
+export default Task;
