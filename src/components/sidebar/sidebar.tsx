@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './sidebar.module.css';
 
-const Sidebar = ({selectedItem, callbackFunction}:{selectedItem:string, callbackFunction:(string)=> void}) => {
-
+const Sidebar = ({ selectedItem, callbackFunction, onAddClick }: SidebarProps) => {
 
     const navItems = [
         { key: 'home', label: 'Home', icon: '/assets/home.svg' },
@@ -35,7 +34,7 @@ const Sidebar = ({selectedItem, callbackFunction}:{selectedItem:string, callback
 
             {/* Action Button Section */}
             <div className={styles.noteButton}>
-                <div className={styles.buttonLeft}>
+                <div className={styles.buttonLeft} onClick={onAddClick}>
                     <img src={'/assets/plus.svg'} alt="plus" className={styles.buttonIcon} />
                     <span>Note</span>
                 </div>

@@ -1,26 +1,27 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './task.module.css';
-import tasksData from '../../models/task-items/tasks.json';
-import type { Task } from "../../types/task-item/task.ts";
+import type {TaskProps} from "../../types/props/task";
 
-const Task = () => {
-    const [tasks, setTasks] = useState<Task[]>(tasksData);
+
+const Task = ({ tasks, setTasks }: TaskProps) => {
     const [filter, setFilter] = useState<'All' | 'Completed' | 'Pending'>('All');
     const [activeTab, setActiveTab] = useState<'Recent' | 'Highlighted'>('Recent');
     const [menuOpenId, setMenuOpenId] = useState<number | null>(null);
 
+    const filteredTasks = tasks
+        .filter(task => {
+            const matchesState =
+                filter === 'Completed' ? task.state === 'Completed' :
+                    filter === 'Pending' ? task.state !== 'Completed' :
+                        true;
 
-    const filteredTasks = tasks.filter(task => {
-        const matchesState =
-            filter === 'Completed' ? task.state === 'Completed' :
-                filter === 'Pending' ? task.state !== 'Completed' :
-                    true;
+            const matchesTab =
+                activeTab === 'Highlighted' ? task.favourite : true;
 
-        const matchesTab =
-            activeTab === 'Highlighted' ? task.favourite : true;
+            return matchesState && matchesTab;
+        })
+        .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime());
 
-        return matchesState && matchesTab;
-    });
 
     const handleDelete = (id: number) => {
         setTasks(prev => prev.filter(task => task.id !== id));

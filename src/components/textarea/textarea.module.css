@@ -1,0 +1,42 @@
+.textareaWrapper {
+    position: relative;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.textarea:focus {
+    border-color: #007bff;
+}
+
+.label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+.textarea:focus + .label,
+.filled + .label {
+    top: -10px;
+    left: 8px;
+    font-size: 12px;
+    color: #007bff;
+    background: white;
+    padding: 0 4px;
+}
