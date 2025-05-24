@@ -1,17 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { JSX } from "react";
 import { Route, Routes } from "react-router";
-import LandingPage from "./pages/LandingPage.tsx";
-import App from "./App.tsx";
+import LandingPage from "./pages/landing-page/LandingPage.tsx";
 
 const publicRoutes = [
     {
         path: '/',
         component: LandingPage
-    },
-    {
-        path: '/app',
-        component: App
     },
 ]
 
