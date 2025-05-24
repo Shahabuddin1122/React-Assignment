@@ -1,0 +1,82 @@
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.noteSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.noteHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab,
+.activeTab {
+    padding: 6px 12px;
+    border: none;
+    background: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.activeTab {
+    background-color: #a2d2ff;
+}
+
+.noteGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.blueCard {
+    border-left: 5px solid #3a86ff;
+}
+
+.favCard {
+    background: rgba(255, 255, 0, 0.2);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    font-size: 14px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 0 12px;
+}

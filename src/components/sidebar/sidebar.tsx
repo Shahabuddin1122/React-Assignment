@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './sidebar.module.css';
 
-const Sidebar = () => {
-    const [selectedItem, setSelectedItem] = useState('home'); // default selected
+const Sidebar = ({selectedItem, callbackFunction}:{selectedItem:string, callbackFunction:(string)=> void}) => {
+
 
     const navItems = [
         { key: 'home', label: 'Home', icon: '/assets/home.svg' },
@@ -51,7 +51,7 @@ const Sidebar = () => {
                         <div
                             key={item.key}
                             className={`${styles.navItem} ${selectedItem === item.key ? styles.selected : ''}`}
-                            onClick={() => setSelectedItem(item.key)}
+                            onClick={() => callbackFunction(item.key)}
                         >
                             <img src={item.icon} alt={item.label} className={styles.navIcon}/>
                             <span className={styles.navText}>{item.label}</span>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Property Listings",
+    "description": "Details about a 4-bedroom home at 789 Oak Street, Springfield, IL.",
+    "time": "2024-06-23T10:30:00Z",
+    "favourite": true,
+    "state": "Completed"
+  },
+  {
+    "id": 2,
+    "title": "Business Strategy Meeting",
+    "description": "Zoom call with the marketing team to discuss campaign strategy.",
+    "time": "2024-06-24T14:00:00Z",
+    "favourite": false,
+    "state": "Pending"
+  },
+  {
+    "id": 3,
+    "title": "Client Follow-up",
+    "description": "Email client for project feedback and status update.",
+    "time": "2024-06-25T11:15:00Z",
+    "favourite": true,
+    "state": "Pending"
+  }
+]
