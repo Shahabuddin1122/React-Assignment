@@ -4,9 +4,11 @@ import tasksData from '../../models/task-items/tasks.json';
 import type { Task } from "../../types/task-item/task.ts";
 
 const Note = () => {
-    const [tasks] = useState<Task[]>(tasksData);
+    const [tasks, setTasks] = useState<Task[]>(tasksData);
     const [filter, setFilter] = useState<'All' | 'Completed' | 'Pending'>('All');
     const [activeTab, setActiveTab] = useState<'Recent' | 'Highlighted'>('Recent');
+    const [menuOpenId, setMenuOpenId] = useState<number | null>(null);
+
 
     const filteredTasks = tasks.filter(task => {
         const matchesState =
@@ -19,6 +21,32 @@ const Note = () => {
 
         return matchesState && matchesTab;
     });
+
+    const handleDelete = (id: number) => {
+        setTasks(prev => prev.filter(task => task.id !== id));
+    };
+
+    const handleToggleComplete = (id: number) => {
+        setTasks(prev =>
+            prev.map(task =>
+                task.id === id
+                    ? { ...task, state: task.state === 'Completed' ? 'Pending' : 'Completed' }
+                    : task
+            )
+        );
+    };
+
+    const handleToggleFavourite = (id: number) => {
+        setTasks(prev =>
+            prev.map(task =>
+                task.id === id
+                    ? { ...task, favourite: !task.favourite }
+                    : task
+            )
+        );
+    };
+
+
 
 
 
@@ -66,9 +94,23 @@ const Note = () => {
                             key={task.id}
                             className={`${styles.card} ${styles.blueCard} ${task.favourite ? styles.favCard : ''}`}
                         >
-                            <div className={styles.cardHeader}>
+                            <div className={styles.cardHeader} style={{ position: 'relative' }}>
                                 <h3>{task.title}</h3>
-                                <button>⋯</button>
+                                <button onClick={() => setMenuOpenId(menuOpenId === task.id ? null : task.id)}>
+                                    ⋯
+                                </button>
+
+                                {menuOpenId === task.id && (
+                                    <div className={styles.dropdownMenu}>
+                                        <button onClick={() => handleDelete(task.id)}>Delete</button>
+                                        <button onClick={() => handleToggleComplete(task.id)}>
+                                            {task.state === 'Completed' ? 'Mark as Pending' : 'Mark as Completed'}
+                                        </button>
+                                        <button onClick={() => handleToggleFavourite(task.id)}>
+                                            {task.favourite ? 'Unfavourite' : 'Favourite'}
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                             <p>{task.description}</p>
                             <div className={styles.cardFooter}>
