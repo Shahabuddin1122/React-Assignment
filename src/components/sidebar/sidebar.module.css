@@ -1,0 +1,240 @@
+.sidebar {
+    width: 30%;
+    height: 100%;
+    background-color: #F5F5F5;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+/* User Information Section */
+.userSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.userLeft {
+    display: flex;
+    align-items: center;
+}
+
+.profilePicture {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profilePicture img {
+    width: 24px;
+    height: 24px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-width: 150px;
+}
+
+.userName,
+.userEmail {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+
+
+.notificationBell {
+    width: 20px;
+    height: 20px;
+}
+
+/* Search Section */
+.searchSection {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 8px 10px 8px 30px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #e5e7eb;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+/* Action Button Section */
+.noteButton {
+    width: 100%;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0 4px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.buttonLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--color-primary);
+    width: 70%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buttonIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.buttonRight {
+    padding: 10px;
+    background-color: var(--color-secondary);
+    width: 20%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ellipsis {
+    width: 20px;
+    height: 20px;
+}
+
+.navigationMenu {
+
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navItem:hover {
+    background-color: #e0e7ff;
+    color: #1d4ed8;
+}
+
+.navItem:hover .navIcon {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(93%) saturate(746%) hue-rotate(199deg) brightness(95%) contrast(90%);
+}
+
+.selected {
+    background-color: #e0e7ff;
+    color: #1d4ed8;
+}
+
+.selected .navIcon {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(83%) saturate(749%) hue-rotate(210deg) brightness(92%) contrast(89%);
+}
+
+.navIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.navText {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+        padding: 20px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navItem {
+        justify-content: center;
+        padding: 10px 0;
+        background-color: transparent !important;
+    }
+
+    .navItem:hover {
+        background-color: transparent;
+        color: var(--color-primary);
+    }
+
+    .navItem:hover .navIcon {
+        filter: brightness(0) saturate(100%) invert(29%) sepia(93%) saturate(746%) hue-rotate(199deg) brightness(95%) contrast(90%);
+    }
+
+    .selected {
+        background-color: transparent;
+        color: var(--color-primary);
+    }
+
+    .selected .navIcon {
+        filter: brightness(0) saturate(100%) invert(32%) sepia(83%) saturate(749%) hue-rotate(210deg) brightness(92%) contrast(89%);
+    }
+
+    .userInfo,
+    .userName,
+    .userEmail,
+    .searchSection,
+    .buttonLeft span,
+    .notificationBell,
+    .buttonRight,
+    .navText {
+        display: none;
+    }
+
+    .searchIcon {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .buttonLeft {
+        justify-content: center;
+        width: 90%;
+        padding: 10px 0;
+        background-color: var(--color-primary);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    .buttonIcon {
+        margin-right: 0;
+    }
+
+    .navIcon {
+        margin-right: 0;
+    }
+
+    .noteButton {
+        justify-content: center;
+    }
+}
