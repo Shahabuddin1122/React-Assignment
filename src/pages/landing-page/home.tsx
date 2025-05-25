@@ -2,7 +2,7 @@ import styles from "./LandingPage.module.css";
 import Button from "../../components/button/Button.tsx";
 import rightArrow from "../../assets/arrow-right.svg";
 
-const Home = () => {
+const Home = ({ callbackFunction }: homeProps) => {
   return (
     <>
       <div className={styles.content}>
@@ -27,7 +27,10 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <Button text={"Get Started"} />
+          <Button
+            text={"Get Started"}
+            onClick={() => callbackFunction("tasks")}
+          />
         </div>
       </div>
     </>

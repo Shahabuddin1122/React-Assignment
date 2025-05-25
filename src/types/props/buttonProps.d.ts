@@ -1,1 +1,1 @@
-export type buttonProps = { text: string, onClick?:(string) => void }
+export type buttonProps = { text: string; onClick?: (string) => void };

@@ -28,13 +28,13 @@ const LandingPage = () => {
   const renderContent = () => {
     switch (selectedItem) {
       case "home":
-        return <Home />;
+        return <Home callbackFunction={setSelectedItem} />;
       case "notes":
         return <Note />;
       case "tasks":
         return <Task tasks={tasks} setTasks={setTasks} />;
       default:
-        return <Home />;
+        return <Home callbackFunction={setSelectedItem} />;
     }
   };
 

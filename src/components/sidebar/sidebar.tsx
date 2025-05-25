@@ -16,9 +16,9 @@ const Sidebar = ({
 }: SidebarProps) => {
   const navItems = [
     { key: "home", label: "Home", icon: home },
+    { key: "tasks", label: "Tasks", icon: tasks },
     { key: "notes", label: "Notes", icon: note },
     { key: "files", label: "Files", icon: files },
-    { key: "tasks", label: "Tasks", icon: tasks },
   ];
 
   return (
