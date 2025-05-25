@@ -6,32 +6,32 @@
   --font-weight-regular: 400;
   --font-weight-medium: 500;
 
-  /* Colors */
-  --color-text: rgba(255, 255, 255, 0.87);
-  --color-bg: #242424;
+  /* Colors - LIGHT MODE ONLY */
+  --color-text: #213547;
+  --color-bg: #ffffff;
 
   --color-primary: #000080;
-  --color-primary-hover: #0000FF;
+  --color-primary-hover: #747bff;
 
   /* Secondary and accent colors */
   --color-secondary: #004687;
-  --color-accent: #ADD8E6;
+  --color-accent: #add8e6;
 
   /* Utility colors */
-  --color-success: #22c55e;         /* Green 500 */
-  --color-warning: #f59e0b;         /* Amber 500 */
-  --color-error:   #ef4444;         /* Red 500 */
-  --color-info:    #3b82f6;         /* Blue 500 */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
 
-  /* Light theme overrides */
-  color-scheme: light dark;
+  /* Force light mode */
+  color-scheme: light;
+
   font-family: var(--font-family);
   line-height: var(--line-height-base);
   font-weight: var(--font-weight-regular);
   color: var(--color-text);
   background-color: var(--color-bg);
 
-  /* Font rendering */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -84,19 +84,6 @@ button {
 
 button:hover {
   opacity: 0.9;
-}
-
-/* Light mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-text: #213547;
-    --color-bg: #ffffff;
-    --color-primary-hover: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 /* Responsive typography (optional) */
