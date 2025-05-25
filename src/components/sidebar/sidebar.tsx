@@ -1,4 +1,13 @@
 import styles from "./sidebar.module.css";
+import profile from "../../assets/profile.svg";
+import bell from "../../assets/bell.svg";
+import search from "../../assets/search.svg";
+import plus from "../../assets/plus.svg";
+import ellipsis from "../../assets/ellipsis.svg";
+import home from "../../assets/home.svg";
+import note from "../../assets/note.svg";
+import files from "../../assets/files.svg";
+import tasks from "../../assets/tasks.svg";
 
 const Sidebar = ({
   selectedItem,
@@ -6,10 +15,10 @@ const Sidebar = ({
   onAddClick,
 }: SidebarProps) => {
   const navItems = [
-    { key: "home", label: "Home", icon: "/assets/home.svg" },
-    { key: "notes", label: "Notes", icon: "/assets/note.svg" },
-    { key: "files", label: "Files", icon: "/assets/files.svg" },
-    { key: "tasks", label: "Tasks", icon: "/assets/tasks.svg" },
+    { key: "home", label: "Home", icon: home },
+    { key: "notes", label: "Notes", icon: note },
+    { key: "files", label: "Files", icon: files },
+    { key: "tasks", label: "Tasks", icon: tasks },
   ];
 
   return (
@@ -18,7 +27,7 @@ const Sidebar = ({
       <div className={styles.userSection}>
         <div className={styles.userLeft}>
           <div className={styles.profilePicture}>
-            <img src={"/assets/profile.svg"} alt={"profile"} />
+            <img src={profile} alt={"profile"} />
           </div>
           <div className={styles.userInfo}>
             <p className={styles.userName}>Shahabuddin Akhon</p>
@@ -26,7 +35,7 @@ const Sidebar = ({
           </div>
         </div>
         <img
-          src={"/assets/bell.svg"}
+          src={bell}
           alt="notification"
           className={styles.notificationBell}
         />
@@ -39,29 +48,17 @@ const Sidebar = ({
           placeholder="Search"
           className={styles.searchInput}
         />
-        <img
-          src={"/assets/search.svg"}
-          alt="search"
-          className={styles.searchIcon}
-        />
+        <img src={search} alt="search" className={styles.searchIcon} />
       </div>
 
       {/* Action Button Section */}
       <div className={styles.noteButton}>
         <div className={styles.buttonLeft} onClick={onAddClick}>
-          <img
-            src={"/assets/plus.svg"}
-            alt="plus"
-            className={styles.buttonIcon}
-          />
+          <img src={plus} alt="plus" className={styles.buttonIcon} />
           <span>Note</span>
         </div>
         <div className={styles.buttonRight}>
-          <img
-            src={"/assets/ellipsis.svg"}
-            alt="ellipsis"
-            className={styles.ellipsis}
-          />
+          <img src={ellipsis} alt="ellipsis" className={styles.ellipsis} />
         </div>
       </div>
 
