@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="/React-Assignment/">
+    <BrowserRouter basename="/react-assignment/">
       <Routing />
     </BrowserRouter>
   </StrictMode>

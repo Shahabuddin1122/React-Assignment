@@ -48,6 +48,12 @@
   margin: 4px 0 0;
 }
 
+.modelItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   .container {

@@ -19,6 +19,12 @@
     align-items: center;
 }
 
+.noteItems {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .tabs {
     display: flex;
     gap: 10px;
@@ -101,6 +107,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    position: relative;
 }
 
 .cardFooter {

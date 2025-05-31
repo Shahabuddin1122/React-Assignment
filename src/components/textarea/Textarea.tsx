@@ -1,5 +1,5 @@
 import styles from "./Textarea.module.css";
-import type { TextareaProps } from "../../types/props/textarea.d.ts";
+import type { TextareaProps } from "../../types/props/Textarea.d.ts";
 
 const Textarea = ({ placeholder, value, onChange }: TextareaProps) => {
   return (

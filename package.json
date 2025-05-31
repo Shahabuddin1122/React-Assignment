@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Shahabuddin1122.github.io/React-Assignment/",
+  "homepage": "https://Shahabuddin1122.github.io/react-assignment/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

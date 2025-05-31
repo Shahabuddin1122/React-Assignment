@@ -1,8 +1,8 @@
-import styles from "./LandingPage.module.css";
+import styles from "./landingPage.module.css";
 import Button from "../../components/button/Button.tsx";
 import rightArrow from "../../assets/arrow-right.svg";
 
-const Home = ({ callbackFunction }: homeProps) => {
+const Home = ({ callbackFunction }: HomeProps) => {
   return (
     <>
       <div className={styles.content}>

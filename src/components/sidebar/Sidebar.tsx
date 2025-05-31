@@ -1,25 +1,14 @@
 import styles from "./sidebar.module.css";
 import profile from "../../assets/profile.svg";
-import bell from "../../assets/bell.svg";
-import search from "../../assets/search.svg";
 import plus from "../../assets/plus.svg";
 import ellipsis from "../../assets/ellipsis.svg";
-import home from "../../assets/home.svg";
-import note from "../../assets/note.svg";
-import files from "../../assets/files.svg";
-import tasks from "../../assets/tasks.svg";
+import { navItems } from "../../models/nav-tems/NavItems.ts";
 
 const Sidebar = ({
   selectedItem,
   callbackFunction,
   onAddClick,
 }: SidebarProps) => {
-  const navItems = [
-    { key: "home", label: "Home", icon: home },
-    { key: "tasks", label: "Tasks", icon: tasks },
-    { key: "notes", label: "Notes", icon: note },
-    { key: "files", label: "Files", icon: files },
-  ];
 
   return (
     <div className={styles.sidebar}>
@@ -34,21 +23,6 @@ const Sidebar = ({
             <p className={styles.userEmail}>Shahabuddin54@gmail.com</p>
           </div>
         </div>
-        <img
-          src={bell}
-          alt="notification"
-          className={styles.notificationBell}
-        />
-      </div>
-
-      {/* Search Section */}
-      <div className={styles.searchSection}>
-        <input
-          type="text"
-          placeholder="Search"
-          className={styles.searchInput}
-        />
-        <img src={search} alt="search" className={styles.searchIcon} />
       </div>
 
       {/* Action Button Section */}
